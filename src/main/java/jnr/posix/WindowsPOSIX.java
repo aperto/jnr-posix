@@ -324,9 +324,15 @@ final public class WindowsPOSIX extends BaseNativePOSIX {
     }
     
     @Override
+    public int fstat(int fd, FileStat stat) {
+    	FileDescriptor fileDescriptor = JavaLibCHelper.toFileDescriptor(fd);
+    	return fstat(fileDescriptor, stat);
+    }
+    
+    @Override
     public int fstat(FileDescriptor fileDescriptor, FileStat stat) {
         WindowsByHandleFileInformation info = new WindowsByHandleFileInformation(getRuntime());
-        if (wlibc().GetFileInformationByHandle(JavaLibCHelper.gethandle(fileDescriptor), info) == 0) return -1;
+        //if (wlibc().GetFileInformationByHandle(JavaLibCHelper.gethandle(fileDescriptor), info) == 0) return -1;
 
         ((WindowsRawFileStat) stat).setup(info);
 

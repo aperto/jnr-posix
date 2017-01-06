@@ -90,6 +90,23 @@ public class FileStatTest {
     }
 
     @Test
+    public void filestatDescriptor2() throws Throwable {
+        File f = File.createTempFile("stat", null);
+
+        try {
+            int fd = posix.open(f.getAbsolutePath(), 0, 438);
+            FileStat stat = posix.allocateStat();
+            int result = posix.fstat(fd, stat);
+            assertEquals(0, result);
+            assertEquals(0, stat.st_size());
+        } finally {
+            f.delete();
+        }
+
+    }
+    
+    
+    @Test
     public void filestatInt() throws Throwable {
         // Windows does not store fd in FileDescriptor so this test wll not work
         if (jnr.ffi.Platform.getNativePlatform().isUnix()) {
