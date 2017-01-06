@@ -7,7 +7,7 @@
     <version>7</version>
   </parent>
 
-  <groupId>com.github.jnr</groupId>
+  <groupId>com.aperto.jnr</groupId>
   <artifactId>jnr-posix</artifactId>
   <packaging>jar</packaging>
   <version>3.0.34-SNAPSHOT</version>
