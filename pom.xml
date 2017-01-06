@@ -22,10 +22,23 @@
   </issueManagement>
 
   <scm>
-    <connection>scm:git:git@github.com:jnr/jnr-posix.git</connection>
-    <developerConnection>scm:git:git@github.com:jnr/jnr-posix.git</developerConnection>
-    <url>git@github.com:jnr/jnr-posix.git</url>
+    <connection>scm:git:git@github.com:aperto/jnr-posix.git</connection>
+    <developerConnection>scm:git:git@github.com:aperto/jnr-posix.git</developerConnection>
+    <url>git@github.com:aperto/jnr-posix.git</url>
   </scm>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>aperto.nexus.snapshots</id>
+      <name>Aperto 3rd party snapshots</name>
+      <url>https://maven.aperto.de/nexus/content/repositories/thirdparty.snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>aperto.nexus.releases</id>
+      <name>Aperto 3rd party</name>
+      <url>https://maven.aperto.de/nexus/content/repositories/thirdparty/</url>
+    </repository>
+  </distributionManagement>
 
   <licenses>
     <license>
