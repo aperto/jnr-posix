@@ -11,3 +11,5 @@ target
 lib/nblibraries-private.properties
 /nbproject/
 /.redcar/
+/.classpath
+/.project
