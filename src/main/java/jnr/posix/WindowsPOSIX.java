@@ -318,7 +318,8 @@ final public class WindowsPOSIX extends BaseNativePOSIX {
     }
 
     public FileStat fstat(int fd) {
-        WindowsFileStat stat = new WindowsFileStat(this);
+        //WindowsFileStat stat = new WindowsFileStat(this);
+	WindowsRawFileStat stat = new WindowsRawFileStat(this,this.handler);
         if (fstat(fd, stat) < 0) handler.error(Errno.valueOf(errno()), "fstat", "" + fd);
         return stat;
     }
